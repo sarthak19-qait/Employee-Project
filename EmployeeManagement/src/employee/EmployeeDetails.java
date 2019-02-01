@@ -1,20 +1,7 @@
 package employee;
 import java.util.*;
-public class EmployeeDetails {
+public class EmployeeDetails {	
 	
-	private double setSalary(String empDesignation) {
-		double salary = 0 ;
-	   if(empDesignation.equalsIgnoreCase("Software Trainee")) {
-	       salary = 12000 ;
-	     }
-	   else if(empDesignation.equalsIgnoreCase("Software Developer")) {
-	       salary = 20000 ;
-	     }
-	   else if(empDesignation.equalsIgnoreCase("Project Manager")) {
-	       salary = 30000 ;
-	     }
-	  return salary;
-	}	
 	public void addEmployee() {
 		   Scanner sc = new Scanner(System.in);
 		   String empName = null , empGender = null , empPhoneNumber = null , empDesignation = null;
@@ -25,12 +12,11 @@ public class EmployeeDetails {
 		   System.out.println("Enter the Employee Phone Number: ");
 		   empPhoneNumber = sc.next();
 		   System.out.println("Enter the Employee Designation: ");
-		   empDesignation = sc.next() ;
-		   double salary = setSalary(empDesignation);
-		   
-		   Employee emp = new Employee(empName, empPhoneNumber,empDesignation,empGender, salary);
-
-		   
+		   empDesignation = sc.next() ;  
+		   Employee emp = new Employee(empName, empPhoneNumber,empDesignation,empGender);
+           emp.setBasicPay(emp.getEmpDesignation());
+//		   emp.idGen++;
+//		   emp.setId(emp.idGen);
 		   // database updation .................... 
 		   sc.close();
 		   
