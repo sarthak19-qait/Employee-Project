@@ -1,5 +1,7 @@
 package employee;
 
+import java.sql.ResultSet;
+
 public class Employee {
 	private String empName;
 	private int empId ;
@@ -21,6 +23,21 @@ public class Employee {
 		this.workHour = 0;
 		this.attendance = 0.0;
 		
+	}
+
+	public static void printEmp(ResultSet resu)
+	{
+		while (resultSet.next()) {
+				String empName = resultSet.getString(1);
+				int empid = resultSet.getInt(2);
+				String phoneNo = resultSet.getString(3);
+				String empDesign = resultSet.getString(4);
+				String gender = resultSet.getString(5);
+				Float salary = resultSet.getFloat(6);
+				Float workHour = resultSet.getFloat(7);
+				Float basicPay = resultSet.getFloat(8);
+				System.out.println("empName="+empName+" empid="+String.valueOf(empid)+" phoneNo="+String.valueOf(phoneNo)+" empDesign="+String.valueOf(empDesign)+
+						" gender="+String.valueOf(gender)+" salary="+String.valueOf(salary)+" workHour="+String.valueOf(workHour)+" basicPay="+String.valueOf(basicPay) );
 	}
 	public double getbasicPay() {
 		return basicPay;
@@ -104,6 +121,6 @@ public class Employee {
 		this.attendance = attendance;
 	}
 	
-	
+
 
 }
